@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Criar um programa em javascript que leia quatro notas de um aluno e 
+ depois imprima a média aritmética das notas e a situação do aluno, a partir
+ dos seguintes critérios:
+ Média <5 reprovado
+ Média >5 e <6.9 recuperação,
+ Média > 7 aprovado   -->
+
+    <form action="">
+        <h1> Situação do Aluno: </h1><br />
+        Nota1:
+        <input type="number" id="n1" /><br /><br />
+        Nota2:
+        <input type="number" id="n2" /><br /><br />
+        Nota3:
+        <input type="number" id="n3" /><br /><br />
+        Nota4:
+        <input type="number" id="n4" /><br /><br />
+        <br /><br />
+
+        <button type="button" onclick="calcular()">Calcular a média do Aluno</button>
+
+    </form>
+    <div id="resposta"></div>
+
+    <script>                           //Quem dá a ação ao HTML é o JAVA SCRIPT
+        function calcular() {
+            //obter o valor da nota
+            var nota1 = parseFloat(document.getElementById("n1").value);
+            //alert(nota1);
+            var nota2 = parseFloat(document.getElementById("n2").value);
+            var nota3 = parseFloat(document.getElementById("n3").value);
+            var nota4 = parseFloat(document.getElementById("n4").value);
+
+
+            // alert(nota do Aluno);
+            //media = parseFloat(media);
+            //calcular a média          
+            var msg = " ";
+            var media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            // Verificar a situação com if aninhado
+
+
+
+            if (media >= 7) {
+                msg = "Aprovado";              
+            }    else{     
+            
+
+            
+            if (media >= 5 && media < 7) {
+                msg = "recuperação";
+            }
+            if (media < 5) {
+                msg = "reprovado";
+            }
+            }
+
+            //Saída - Impressão de Tela
+
+            document.getElementById("resposta").innerHTML =
+                "<br/>" + "A média foi : " + media.toFixed(2) + "situação" + msg;
+
+            //alert ("A média foi : " + media.toFixed(2));
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Solicite ao usuário, o peso e altura, e calcule o seu IMC dizendo
+    
+    IMC = PESO / ALTURA² 
+     
+    IMC = peso / (altura x altura
+
+    IMC 	Classificação
+    Menor que 18,5 	Magreza
+    18,5 a 24,9 		Normal
+    25 a 29,9 		Sobrepeso
+    30 a 34,9 		Obesidade grau I
+    35 a 39,9 		Obesidade grau II
+    Maior que 40 	Obesidade grau III -->
+
+    <form action="">
+        peso:
+        <input type="number" id="p" /><br /><br />
+        altura:
+        <input type="number" id="a" /><br /><br />
+
+        <button type="button" onclick="calcular()">Calcular o IMC</button>
+
+    </form>
+    <div id="resposta"></div>
+
+
+    <script>
+        function calcular() {
+            //var p = parseFloat(prompt("Digite o seu peso"));
+           // var a = parseFloat(prompt("Digite a sua altura"));
+            var imc = p / a ** 2
+
+            if (imc < 18, 5) {
+                alert("Magreza");
+            }
+            if (imc >= 18, 5 && imc < 25) {
+                alert("Normal");
+
+            }
+            if (imc >= 25 && imc < 30) {
+                alert("Sobrepeso");
+
+            }
+            if (imc > 30 && imc < 35) {
+                alert("Obesidade grau I");
+
+            }
+            if (imc > 35 && imc < 40) {
+                alert("Obesidade grau II");
+
+            }
+
+            else {
+                alert("Obesidade grau III");
+
+
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
