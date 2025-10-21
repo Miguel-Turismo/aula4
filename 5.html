@@ -35,50 +35,56 @@
     <div id="resposta"></div>
 
 
-    <script>
+   
+
+<script>
         function calcular() {
             //var p = parseFloat(prompt("Digite o seu peso"));
            // var a = parseFloat(prompt("Digite a sua altura"));
-            var imc = p / a ** 2
-
+            var p = parseFloat(document.getElementById("peso").value);
+            var a = parseFloat(document.getElementById("altura").value);
+            
+            var msg = " ";
+            var imc = p / Math.pow(a,2);
+            
+            alert (imc.toFixed(2));
+                        
             if (imc < 18, 5) {
-                alert("Magreza");
+                msg = "tem Magreza";
             }
+
             if (imc >= 18, 5 && imc < 25) {
-                alert("Normal");
-
+                msg = "está Normal";
             }
+
             if (imc >= 25 && imc < 30) {
-                alert("Sobrepeso");
-
+                msg = "está com Sobrepeso";
             }
-            if (imc > 30 && imc < 35) {
-                alert("Obesidade grau I");
-
-            }
-            if (imc > 35 && imc < 40) {
-                alert("Obesidade grau II");
-
+            
+            if ( imc > 30 && imc < 35 ) {
+                msg = "está com Obesidade grau I";
             }
 
-            else {
-                alert("Obesidade grau III");
+            if ( imc > 35 && imc < 40 ) {
+                msg = "está com Obesidade grau II";
+            }    
+            if ( imc > 40 ) {
+                msg = "está com Obesidade grau III";
 
+             }
+            
+        
 
-            }
-        }
+        //Saída
+
+            document.getElementById("resposta").innerHTML =
+                "<br/>" + "Seu IMC é de  " + imc.toFixed(2)  + "  você  " + msg;
+            alert ("Seu IMC é de  " + imc.toFixed(2) + "  você  " + msg);
+
+        }    
     </script>
 
-
-
-
-
-
-
-
-
-
-
 </body>
+
 
 </html>
